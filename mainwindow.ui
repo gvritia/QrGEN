@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>900</width>
+    <height>620</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>QR Code Generator</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="mainLayout">
+    <item>
+     <layout class="QHBoxLayout">
+      <item>
+       <widget class="QLabel" name="dataTypeLabel">
+        <property name="text">
+         <string>Тип данных</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="dataTypeComboBox">
+        <item>
+         <property name="text">
+          <string>Text</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>URL</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>VCARD</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Email</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>WiFi</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Location</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Event</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QStackedWidget" name="dataInputStack">
+      <property name="currentIndex">
+       <number>6</number>
+      </property>
+      <widget class="QWidget" name="textWidget">
+       <layout class="QVBoxLayout">
+        <item>
+         <widget class="QLineEdit" name="textLineEdit">
+          <property name="placeholderText">
+           <string>Enter text</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="urlWidget">
+       <layout class="QVBoxLayout">
+        <item>
+         <widget class="QLineEdit" name="urlLineEdit">
+          <property name="placeholderText">
+           <string>Enter URL</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="vcardWidget">
+       <layout class="QVBoxLayout">
+        <item>
+         <widget class="QLineEdit" name="vcardNameLineEdit">
+          <property name="placeholderText">
+           <string>Full name</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="vcardPhoneLineEdit">
+          <property name="placeholderText">
+           <string>Phone number</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="emailWidget">
+       <layout class="QVBoxLayout">
+        <item>
+         <widget class="QLineEdit" name="emailLineEdit">
+          <property name="placeholderText">
+           <string>Email address</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTextEdit" name="emailBodyTextEdit">
+          <property name="placeholderText">
+           <string>Email body</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="wifiWidget">
+       <layout class="QVBoxLayout">
+        <item>
+         <widget class="QLineEdit" name="wifiSsidLineEdit">
+          <property name="placeholderText">
+           <string>SSID</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="wifiPasswordLineEdit">
+          <property name="placeholderText">
+           <string>Password</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="wifiEncryptionComboBox">
+          <item>
+           <property name="text">
+            <string>WPA</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>WEP</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>nopass</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="locationWidget">
+       <layout class="QVBoxLayout">
+        <item>
+         <widget class="QLineEdit" name="latitudeLineEdit">
+          <property name="placeholderText">
+           <string>Latitude</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="longitudeLineEdit">
+          <property name="placeholderText">
+           <string>Longitude</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="eventWidget">
+       <layout class="QVBoxLayout">
+        <item>
+         <widget class="QLineEdit" name="eventTitleLineEdit">
+          <property name="placeholderText">
+           <string>Event Title</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QDateTimeEdit" name="eventStartDateTimeEdit">
+          <property name="calendarPopup">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QDateTimeEdit" name="eventEndDateTimeEdit">
+          <property name="calendarPopup">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout">
+      <item>
+       <widget class="QLabel" name="sizeLabel">
+        <property name="text">
+         <string>Размер</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QSpinBox" name="sizeSpinBox">
+        <property name="minimum">
+         <number>100</number>
+        </property>
+        <property name="maximum">
+         <number>1000</number>
+        </property>
+        <property name="value">
+         <number>300</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="ecLevelLabel">
+        <property name="text">
+         <string>Уровень коррекции</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="errorCorrectionComboBox">
+        <item>
+         <property name="text">
+          <string>L (7%)</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>M (15%)</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Q (25%)</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>H (30%)</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="colorButton">
+        <property name="text">
+         <string>Цвет</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="addLogoButton">
+        <property name="text">
+         <string>Добавить логотип</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="removeLogoButton">
+        <property name="text">
+         <string>Удалить логотип</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout">
+      <item>
+       <widget class="QLabel" name="expiryLabel">
+        <property name="text">
+         <string>Срок действия</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="expiryCheckBox">
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QDateTimeEdit" name="expiryDateTimeEdit">
+        <property name="calendarPopup">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QPushButton" name="generateButton">
+      <property name="text">
+       <string>Сгенерировать QR Code</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="qrCodeLabel">
+      <property name="minimumSize">
+       <size>
+        <width>300</width>
+        <height>300</height>
+       </size>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Box</enum>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout">
+      <item>
+       <widget class="QPushButton" name="saveButton">
+        <property name="text">
+         <string>Сохранить</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="instructionButton">
+        <property name="text">
+         <string>Инструкция</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
